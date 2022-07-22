@@ -42,19 +42,19 @@ namespace QuanLySinhVien.Logics
             return Students.Where(x => x.Dob.Year == Year).ToList();
         }
 
-        public static List<Student> SearchByAddress(List<Student> Students, string Address)
+        public static List<Student> SearchByAddress(List<Student> Students, string Addre)
         {
-            return Students.Where(x => x.Address.ToLower().Contains(Address.ToLower())).ToList();
+            return Students.Where(x => x.Address == Addre).ToList();
         }
 
         public static List<Student> SearchByScho(List<Student> Students, string Scho)
         {
-            return Students.Where(x => x.Scholarship.ToLower().Contains(Scho.ToLower())).ToList();
+            return Students.Where(x => x.Scholarship == Scho).ToList();
         }
 
         public static List<string> GetAllAddress(List<Student> Students)
         {
-            List<string> items= Students.Select(x => x.Address.ToString()).Distinct().ToList();
+            List<string> items = Students.Select(x => x.Address.ToString()).Distinct().ToList();
             items.Insert(0, "All address");
             return items;
         }

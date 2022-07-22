@@ -10,8 +10,8 @@ namespace QuanLySinhVien.Logics
     {
         public static List<string> GetAddre()
         {
-            return new List<string> { "Ha Noi", "Bac Ninh", "Hai Duong",
-                "Hai Phong", "Quang Ninh",
+            return new List<string> { "All address", "Ha Noi", "Bac Ninh", 
+                "Hai Duong", "Hai Phong", "Quang Ninh",
                 "Hue", "Da Nang", "Nghe An",
                 "Ho Chi Minh", "Can Tho" };
         }

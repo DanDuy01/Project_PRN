@@ -33,6 +33,8 @@
             this.btOpen = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbScho = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbAddress = new System.Windows.Forms.ComboBox();
             this.cbDob = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,6 +92,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbScho);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbAddress);
             this.panel1.Controls.Add(this.cbDob);
             this.panel1.Controls.Add(this.label3);
@@ -100,28 +104,35 @@
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Location = new System.Drawing.Point(752, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 280);
+            this.panel1.Size = new System.Drawing.Size(360, 308);
             this.panel1.TabIndex = 5;
+            // 
+            // cbScho
+            // 
+            this.cbScho.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbScho.FormattingEnabled = true;
+            this.cbScho.Location = new System.Drawing.Point(108, 250);
+            this.cbScho.Name = "cbScho";
+            this.cbScho.Size = new System.Drawing.Size(149, 31);
+            this.cbScho.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(7, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 23);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Scholarship";
             // 
             // cbAddress
             // 
             this.cbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbAddress.FormattingEnabled = true;
-            this.cbAddress.Items.AddRange(new object[] {
-            "All",
-            "Ha Noi ",
-            "Bac Ninh",
-            "Hai Duong",
-            "Hai Phong",
-            "Quang Ninh",
-            "Hue",
-            "Da Nang",
-            "Nghe An",
-            "Ho Chi Minh",
-            "Can Tho"});
             this.cbAddress.Location = new System.Drawing.Point(108, 197);
             this.cbAddress.Name = "cbAddress";
-            this.cbAddress.Size = new System.Drawing.Size(129, 31);
+            this.cbAddress.Size = new System.Drawing.Size(149, 31);
             this.cbAddress.TabIndex = 15;
             this.cbAddress.SelectedIndexChanged += new System.EventHandler(this.btSearch_Click);
             // 
@@ -131,7 +142,7 @@
             this.cbDob.FormattingEnabled = true;
             this.cbDob.Location = new System.Drawing.Point(108, 140);
             this.cbDob.Name = "cbDob";
-            this.cbDob.Size = new System.Drawing.Size(129, 31);
+            this.cbDob.Size = new System.Drawing.Size(149, 31);
             this.cbDob.TabIndex = 14;
             this.cbDob.SelectedIndexChanged += new System.EventHandler(this.btSearch_Click);
             // 
@@ -212,6 +223,7 @@
             this.btAdd.TabIndex = 9;
             this.btAdd.Text = "Add New Student";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // Form1
             // 
@@ -253,5 +265,7 @@
         private System.Windows.Forms.ComboBox cbDob;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbAddress;
+        private System.Windows.Forms.ComboBox cbScho;
+        private System.Windows.Forms.Label label2;
     }
 }

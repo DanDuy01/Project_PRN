@@ -34,6 +34,7 @@ namespace QuanLySinhVien
             dataGridView1.DataSource = Students;
             cbDob.DataSource = StudentManagement.GetAllYearOfDob(Students);
             cbAddress.DataSource = AddressManagement.GetAddre();
+            cbScho.DataSource = SchoManagement.GetScho();
 
             DataGridViewButtonColumn deleteStu = new DataGridViewButtonColumn();
             deleteStu.Name = "DeleteRow";
@@ -58,9 +59,9 @@ namespace QuanLySinhVien
                 students = StudentManagement.GetAllStudentsFromDB();
                 dataGridView1.DataSource = students;
 
-                //frmEdit newform = new frmEdit(students[e.RowIndex]);
-                //newform.FormClosed += loadDataGirdView;
-                //newform.Show();
+                frmEdit newform = new frmEdit(students[e.RowIndex]);
+                newform.FormClosed += frmEdit_Close;
+                newform.Show();
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name.Equals("DeleteRow"))
             {
@@ -70,10 +71,8 @@ namespace QuanLySinhVien
                 MessageBoxButtons.OKCancel);
                 switch (result)
                 {
-
                     case DialogResult.OK:
                         {
-                            StudentManagement.DeleteS(id);
                             StudentManagement.DeleteS(id);
                             MessageBox.Show("Delete successfully!");
                             this.Text = "[OK]";
@@ -111,6 +110,7 @@ namespace QuanLySinhVien
                 dataGridView1.DataSource = Students;
                 cbDob.DataSource = StudentManagement.GetAllYearOfDob(Students);
                 cbAddress.DataSource = StudentManagement.GetAllAddress(Students);
+                cbScho.DataSource = SchoManagement.GetScho();
             }
         }
 
@@ -139,6 +139,8 @@ namespace QuanLySinhVien
                 //co dieu kien Address?
                 if (cbAddress.SelectedIndex != 0)
                     Results = StudentManagement.SearchByAddress(Results, Convert.ToString(cbAddress.SelectedItem));
+                if (cbScho.SelectedIndex != 0)
+                   Results = StudentManagement.SearchByScho(Results, Convert.ToString(cbScho.SelectedItem));
             }
             dataGridView1.DataSource = Results;
         }
@@ -166,6 +168,13 @@ namespace QuanLySinhVien
                 sw.Dispose();
                 sw.Close();
             }
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            //Form2 newform = new Form2(Students[e.RowIndex]);
+            //newform.FormClosed += loadDataGirdView;
+            //newform.Show();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace QuanLySinhVien.Models
 {
-    class Student
+    public class Student
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -10,6 +10,11 @@ namespace QuanLySinhVien.Models
         public string Address { get; set; }
         public string Major { get; set; }
         public string Scholarship { get; set; }
+
+        public Student()
+        {
+
+        }
 
         public Student(int id, string name, DateTime dob, string address, string major, string scholarship)
         {

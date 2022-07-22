@@ -20,7 +20,7 @@ namespace QuanLySinhVien.DataAccess
                     Convert.ToDateTime(dr["Dob"]),
                     dr["Address"].ToString(),
                     dr["Major"].ToString(),
-                    dr["sholarship"].ToString()));
+                    dr["Scholarship"].ToString()));
             return list;
         }
 
@@ -36,19 +36,19 @@ namespace QuanLySinhVien.DataAccess
                     Convert.ToDateTime(dr["Dob"]),
                     dr["Address"].ToString(),
                     dr["major"].ToString(),
-                    dr["sholarship"].ToString()));
+                    dr["scholarship"].ToString()));
             }
             return list;
         }
 
-        public static void UpdateStudent(string name, string dob, string address, string major, string scholar, string id)
+        public static void UpdateStudent(string name, string dob, string address, string major, string scholarship, string id)
         {
             string sql = "update Student set" +
                 " Name='" + name + " ', " +
-                "DOB= '" + dob + "'," +
-                " major = '" + address + "' ," +
-                "entryYear = '" + major + "', " +
-                "scholar = " + scholar + " " +
+                " Dob= '" + dob + "'," +
+                " Address = '" + address + "' ," +
+                " Major = '" + major + "', " +
+                " scholarship = " + scholarship + " " +
                 "where id = " + id;
             DAO.CRUD(sql);
         }
@@ -64,9 +64,9 @@ namespace QuanLySinhVien.DataAccess
             string sql = @"update Student set
                             Name=@name,
                             Dob=@dob,
-                            Address=@address
+                            Address=@address,
                             Major=@major,
-                            Scholarship=@scho
+                            scholarship=@scho
                            where Id=@id";
             SqlParameter p1 = new SqlParameter("@id", SqlDbType.Int);
             p1.Value = s.Id;
@@ -83,10 +83,10 @@ namespace QuanLySinhVien.DataAccess
             return DAO.ExecuteSql(sql, p1, p2, p3, p4, p5, p6);
         }
 
-        public static void AddStudent(string id, string name, string dob, string address, string major, string scholar)
+        public static void AddStudent(string id, string name, string dob, string address, string major, string scholarship)
         {
             string sql = "insert into Student(id, name, dob, address, major, scholarship) " +
-                " values(" + id + " , '" + name + "' , '" + dob + "' , '" + address + "' , " + major + " , " + scholar + ")";
+                " values(" + id + " , '" + name + "' , '" + dob + "' , '" + address + "' , " + major + " , " + scholarship + ")";
             DAO.CRUD(sql);
         }
 
