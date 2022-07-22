@@ -1,15 +1,11 @@
-﻿
-using QuanLySinhVien.Models;
+﻿using QuanLySinhVien.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLySinhVien.DataAccess
 {
-    internal class FileIO
+    class FileIO
     {
         private string filename;
 
@@ -33,7 +29,8 @@ namespace QuanLySinhVien.DataAccess
                         items[1],
                         Convert.ToDateTime(items[2]),
                         items[3],
-                        Convert.ToDouble(items[4])
+                        items[4],
+                        items[5]
                         );
                     students.Add(s);
                 }
@@ -42,6 +39,7 @@ namespace QuanLySinhVien.DataAccess
 
                 }
             }
+            reader.Close();
             return students;
         }
     }

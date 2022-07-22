@@ -32,20 +32,14 @@
             this.tbFileName = new System.Windows.Forms.TextBox();
             this.btOpen = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
-            this.btSaveAs = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbMajor = new System.Windows.Forms.ComboBox();
+            this.cbAddress = new System.Windows.Forms.ComboBox();
             this.cbDob = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbMajor = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbAll = new System.Windows.Forms.RadioButton();
             this.lbName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btAdd = new System.Windows.Forms.Button();
@@ -62,11 +56,12 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(714, 524);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tbFileName
             // 
             this.tbFileName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbFileName.Location = new System.Drawing.Point(55, 28);
+            this.tbFileName.Location = new System.Drawing.Point(107, 28);
             this.tbFileName.Name = "tbFileName";
             this.tbFileName.Size = new System.Drawing.Size(555, 30);
             this.tbFileName.TabIndex = 1;
@@ -74,7 +69,7 @@
             // btOpen
             // 
             this.btOpen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btOpen.Location = new System.Drawing.Point(616, 19);
+            this.btOpen.Location = new System.Drawing.Point(668, 19);
             this.btOpen.Name = "btOpen";
             this.btOpen.Size = new System.Drawing.Size(94, 42);
             this.btOpen.TabIndex = 2;
@@ -85,60 +80,60 @@
             // btSave
             // 
             this.btSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btSave.Location = new System.Drawing.Point(744, 19);
+            this.btSave.Location = new System.Drawing.Point(801, 19);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(94, 42);
             this.btSave.TabIndex = 3;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
-            // 
-            // btSaveAs
-            // 
-            this.btSaveAs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btSaveAs.Location = new System.Drawing.Point(871, 19);
-            this.btSaveAs.Name = "btSaveAs";
-            this.btSaveAs.Size = new System.Drawing.Size(94, 42);
-            this.btSaveAs.TabIndex = 4;
-            this.btSaveAs.Text = "SaveAs";
-            this.btSaveAs.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbMajor);
+            this.panel1.Controls.Add(this.cbAddress);
             this.panel1.Controls.Add(this.cbDob);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lbMajor);
-            this.panel1.Controls.Add(this.tbID);
+            this.panel1.Controls.Add(this.lbAddress);
+            this.panel1.Controls.Add(this.tbId);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.tbName);
-            this.panel1.Controls.Add(this.rbFemale);
-            this.panel1.Controls.Add(this.rbMale);
-            this.panel1.Controls.Add(this.rbAll);
             this.panel1.Controls.Add(this.lbName);
             this.panel1.Location = new System.Drawing.Point(752, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 388);
+            this.panel1.Size = new System.Drawing.Size(360, 280);
             this.panel1.TabIndex = 5;
             // 
-            // cbMajor
+            // cbAddress
             // 
-            this.cbMajor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbMajor.FormattingEnabled = true;
-            this.cbMajor.Location = new System.Drawing.Point(69, 194);
-            this.cbMajor.Name = "cbMajor";
-            this.cbMajor.Size = new System.Drawing.Size(151, 31);
-            this.cbMajor.TabIndex = 15;
+            this.cbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbAddress.FormattingEnabled = true;
+            this.cbAddress.Items.AddRange(new object[] {
+            "All",
+            "Ha Noi ",
+            "Bac Ninh",
+            "Hai Duong",
+            "Hai Phong",
+            "Quang Ninh",
+            "Hue",
+            "Da Nang",
+            "Nghe An",
+            "Ho Chi Minh",
+            "Can Tho"});
+            this.cbAddress.Location = new System.Drawing.Point(108, 197);
+            this.cbAddress.Name = "cbAddress";
+            this.cbAddress.Size = new System.Drawing.Size(129, 31);
+            this.cbAddress.TabIndex = 15;
+            this.cbAddress.SelectedIndexChanged += new System.EventHandler(this.btSearch_Click);
             // 
             // cbDob
             // 
             this.cbDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbDob.FormattingEnabled = true;
-            this.cbDob.Location = new System.Drawing.Point(69, 140);
+            this.cbDob.Location = new System.Drawing.Point(108, 140);
             this.cbDob.Name = "cbDob";
-            this.cbDob.Size = new System.Drawing.Size(151, 31);
+            this.cbDob.Size = new System.Drawing.Size(129, 31);
             this.cbDob.TabIndex = 14;
+            this.cbDob.SelectedIndexChanged += new System.EventHandler(this.btSearch_Click);
             // 
             // label3
             // 
@@ -150,42 +145,24 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "DOB";
             // 
-            // textBox1
+            // lbAddress
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(108, 248);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 30);
-            this.textBox1.TabIndex = 12;
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbAddress.Location = new System.Drawing.Point(5, 197);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(70, 23);
+            this.lbAddress.TabIndex = 9;
+            this.lbAddress.Text = "Address";
             // 
-            // label2
+            // tbId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(5, 251);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 23);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Scholarship";
-            // 
-            // lbMajor
-            // 
-            this.lbMajor.AutoSize = true;
-            this.lbMajor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbMajor.Location = new System.Drawing.Point(5, 197);
-            this.lbMajor.Name = "lbMajor";
-            this.lbMajor.Size = new System.Drawing.Size(54, 23);
-            this.lbMajor.TabIndex = 9;
-            this.lbMajor.Text = "Major";
-            // 
-            // tbID
-            // 
-            this.tbID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbID.Location = new System.Drawing.Point(69, 32);
-            this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(134, 30);
-            this.tbID.TabIndex = 8;
+            this.tbId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbId.Location = new System.Drawing.Point(108, 32);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(129, 30);
+            this.tbId.TabIndex = 8;
+            this.tbId.TextChanged += new System.EventHandler(this.btSearch_Click);
             // 
             // lbID
             // 
@@ -200,45 +177,11 @@
             // tbName
             // 
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbName.Location = new System.Drawing.Point(69, 82);
+            this.tbName.Location = new System.Drawing.Point(108, 82);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(279, 30);
+            this.tbName.Size = new System.Drawing.Size(214, 30);
             this.tbName.TabIndex = 5;
-            // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbFemale.Location = new System.Drawing.Point(222, 346);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(85, 27);
-            this.rbFemale.TabIndex = 4;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbMale.Location = new System.Drawing.Point(49, 346);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(68, 27);
-            this.rbMale.TabIndex = 3;
-            this.rbMale.Text = "Male";
-            this.rbMale.UseVisualStyleBackColor = true;
-            // 
-            // rbAll
-            // 
-            this.rbAll.AutoSize = true;
-            this.rbAll.Checked = true;
-            this.rbAll.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbAll.Location = new System.Drawing.Point(108, 302);
-            this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(129, 27);
-            this.rbAll.TabIndex = 2;
-            this.rbAll.TabStop = true;
-            this.rbAll.Text = "Male/Female";
-            this.rbAll.UseVisualStyleBackColor = true;
+            this.tbName.TextChanged += new System.EventHandler(this.btSearch_Click);
             // 
             // lbName
             // 
@@ -263,7 +206,7 @@
             // btAdd
             // 
             this.btAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btAdd.Location = new System.Drawing.Point(831, 549);
+            this.btAdd.Location = new System.Drawing.Point(833, 479);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(207, 42);
             this.btAdd.TabIndex = 9;
@@ -277,7 +220,6 @@
             this.ClientSize = new System.Drawing.Size(1131, 647);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btSaveAs);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btOpen);
@@ -300,22 +242,16 @@
         private System.Windows.Forms.TextBox tbFileName;
         private System.Windows.Forms.Button btOpen;
         private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.Button btSaveAs;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.RadioButton rbFemale;
-        private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.RadioButton rbAll;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Button btAdd;
-        private System.Windows.Forms.Label lbMajor;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.ComboBox cbDob;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbMajor;
+        private System.Windows.Forms.ComboBox cbAddress;
     }
 }

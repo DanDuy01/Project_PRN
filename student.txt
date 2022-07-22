@@ -1,6 +1,6 @@
-1|Nguyen Van A|12 Sep 2000|SE|50
-2|Nguyen Binh Duong|14 Sep 2000|IA|45
-3|Bui Trung Thanh|09 Oct 2000|GD|0
-4|Dan Cong Duy|04 Oct 2001|SE|0
-5|Pham Trung Duc|04 Sep 2001|GD|100
-6|Vu Van Trung|21 May 2000|IA|50
+1|Nguyen Van A|12 Sep 2000|Ha Noi|SE|50
+2|Nguyen Binh Duong|14 Sep 2000|Hai Phong|IA|45
+3|Bui Trung Thanh|09 Oct 2000|Quang Ninh|GD|0
+4|Dan Cong Duy|04 Oct 2001|Hue|SE|0
+5|Pham Trung Duc|04 Sep 2001|Da Nang|GD|100
+6|Vu Van Trung|21 May 2000|Hai Duong|IA|50

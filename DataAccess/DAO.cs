@@ -1,11 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLySinhVien.DataAccess
 {
@@ -21,7 +17,7 @@ namespace QuanLySinhVien.DataAccess
         public static DataTable GetDataBySql(string sql, SqlParameter[] parameters = null)
         {
             SqlCommand command = new SqlCommand(sql, GetConnection());
-            if (parameters != null)
+            if (parameters != null) 
                 command.Parameters.AddRange(parameters);
             DataTable dt = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -39,6 +35,21 @@ namespace QuanLySinhVien.DataAccess
             int k = command.ExecuteNonQuery();
             command.Connection.Close();
             return k;
+        }
+
+        public static void CRUD(string sql)
+        {
+            SqlCommand command = new SqlCommand(sql, GetConnection());
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

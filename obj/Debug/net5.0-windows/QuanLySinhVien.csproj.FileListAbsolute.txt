@@ -70,3 +70,4 @@ D:\PRN211\Project\QuanLySinhVien\bin\Debug\net5.0-windows\runtimes\win\lib\netco
 D:\PRN211\Project\QuanLySinhVien\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\PRN211\Project\QuanLySinhVien\obj\Debug\net5.0-windows\QuanLySinhVien.csproj.CopyComplete
 D:\PRN211\Project\QuanLySinhVien\bin\Debug\net5.0-windows\appsettings.json
+D:\PRN211\Project\QuanLySinhVien\obj\Debug\net5.0-windows\QuanLySinhVien.Form2.resources
